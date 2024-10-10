@@ -1,0 +1,16 @@
+/* custom font class */
+.font-mulish{
+    font-family: "Mulish", sans-serif;
+}
+.font-inter{
+    font-family: "Inter", sans-serif;
+}
+
+/* gradient text color */
+.gradient-text {
+    background-image: linear-gradient(to right, #797DFCFF, #797DFC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+

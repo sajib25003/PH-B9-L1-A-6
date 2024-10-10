@@ -1,0 +1,12 @@
+github repository link:
+https://github.com/Programming-Hero-Web-Course4/b9a6-retro-forum-sajib25003
+live page link:
+https://ahb-b9-a6-retro-reminisce.netlify.app/
+
+Re-check Reason:
+Examiner's feedback: 12. Show loader on the screen at least 2s when fetching data
+  → not okay.
+
+But I applied this on "Latest Post" section (just above the footer section). The linked js file name is script.js 
+
+Please check again. 

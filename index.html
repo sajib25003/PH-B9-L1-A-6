@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Reminisce</title>
+    <!-- daisyUI & Tailwind CSS-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- google fonts : Mulish & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="mx-[20px] lg:mx-[90px] py-7 lg:py-14">
+      <!-- navbar -->
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <!-- navbar dropdown -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <a
+                class="btn rounded-full bg-[#12132D08] font-mulish text-sm font-normal"
+                ><i class="fa-sharp fa-solid fa-house" style="color: #000"> </i
+                >Home</a
+              >
+              <a
+                class="btn rounded-full bg-[#12132D08] font-mulish text-sm font-normal"
+                ><i class="fa-solid fa-pencil" style="color: #000"> </i>Edit</a
+              >
+              <a
+                class="btn rounded-full bg-[#12132D08] font-mulish text-sm font-normal"
+                ><i class="fa-solid fa-user-plus" style="color: #000"> </i
+                >Add</a
+              >
+              <a
+                class="btn rounded-full bg-[#12132D08] font-mulish text-sm font-normal"
+                ><i class="fa-regular fa-flag" style="color: #000"> </i
+                >Report</a
+              >
+            </ul>
+          </div>
+          <a class="font-mulish text-xl lg:text-4xl font-black">ReTro</a>
+        </div>
+        <!-- nav bar large screen -->
+        <div class="navbar-end gap-4">
+          <div class="hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 gap-4">
+              <!-- home button -->
+              <div class="tooltip tooltip-bottom" data-tip="Home">
+                <button class="btn rounded-full bg-[#12132D08]">
+                  <i class="fa-sharp fa-solid fa-house" style="color: #000"></i>
+                </button>
+              </div>
+              <!-- Edit Button -->
+              <div class="tooltip tooltip-bottom" data-tip="Edit">
+                <button class="btn rounded-full bg-[#12132D08]">
+                  <i class="fa-solid fa-pencil" style="color: #000"></i>
+                </button>
+              </div>
+              <!-- Add button -->
+              <div class="tooltip tooltip-bottom" data-tip="Add">
+                <button class="btn rounded-full bg-[#12132D08]">
+                  <i class="fa-solid fa-user-plus" style="color: #000"></i>
+                </button>
+              </div>
+              <!-- flag button -->
+              <div class="tooltip tooltip-bottom" data-tip="Report">
+                <button class="btn rounded-full bg-[#12132D08]">
+                  <i class="fa-regular fa-flag" style="color: #000"></i>
+                </button>
+              </div>
+            </ul>
+          </div>
+          <a
+            class="btn font-mulish text-base lg:text-xl font-bold text-white bg-[#797DFC] rounded-[50px]"
+            >Sign In</a
+          >
+        </div>
+      </div>
+      <!-- banner section -->
+      <div
+        class="h-full lg:h-[550px] bg-gradient-to-b from-[#12132D] to-[#12132D99] mt-10 rounded-3xl p-24 flex flex-col lg:flex-row items-center gap-8"
+      >
+        <div class="text-white space-y-7 flex-1">
+          <h2 class="font-mulish text-6xl font-black">
+            Welcome to the <br />
+            <span class="gradient-text">ReTro</span> Reminisce
+          </h2>
+          <p class="text-[#FFFFFFCC] leading-8">
+            Share your favourite opinion and get a chance to win our
+            <br />delicious Coffee for <span class="text-orange-400">FREE</span>
+          </p>
+          <div
+            class="lg:w-[400px] bg-white flex justify-between p-2 rounded-[50px]"
+          >
+            <input
+              id="search-field"
+              class="bg-transparent mx-3 font-mulish text-base font-medium focus:border-none focus:outline-none text-black"
+              type="text"
+              placeholder="Search here anything"
+            />
+            <button
+              onclick="handleSearch()"
+              class="btn text-white font-mulish text-xl font-bold w-28 bg-[#797DFC] border-none rounded-[46px]"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+
+        <!-- right static div -->
+        <div
+          class="text-black bg-white rounded-3xl flex-1 max-w-[380px] max-h-[80%] p-14 space-y-4 font-mulish font-medium text-2xl"
+        >
+          <div class="flex justify-between">
+            <h4>Registered Users</h4>
+            <h4>01</h4>
+          </div>
+          <div class="flex justify-between">
+            <h4>Forum</h4>
+            <h4>05</h4>
+          </div>
+          <div class="flex justify-between">
+            <h4>Topics</h4>
+            <h4>01</h4>
+          </div>
+          <div class="flex justify-between">
+            <h4>Replies</h4>
+            <h4>01</h4>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mx-[20px] lg:mx-[90px] py-7 lg:py-14">
+      <!-- Lets discuss section -->
+      <section>
+        <div class="px-4 lg:px-32 text-center space-y-4 pb-10">
+          <h3 class="font-mulish font-black text-4xl text-[#12132D]">
+            Lat's Discuss
+          </h3>
+          <p class="font-inter font-normal text-lg text-[#12132D99]">
+            Dive into the vibrant mosaic of shared memories, where customers
+            unveil their nostalgic tales, weaving a tapestry of unique
+            experiences that echo the heartwarming spirit of Retro Reminisce.
+          </p>
+        </div>
+
+        <!-- posts from API (mother container) -->
+        <div class="flex flex-col lg:flex-row gap-4 lg:gap-10">
+          <!-- left: post section container -->
+          <div id="all-post-container" class="flex flex-col gap-5">
+            <!-- 1st card -->
+          </div>
+          <!-- right: clicked section -->
+          <div>
+            <div class="p-6 bg-[#12132D0D] rounded-3xl space-y-4">
+              <div class="flex justify-between gap-28">
+                <h4 class="font-mulish font-bold text-xl text-[#12132D]">
+                  Title
+                </h4>
+                <h4 class="text-[#12132D99] font-inter font-normal text-base">
+                  <i
+                    class="fa-solid fa-check-double"
+                    style="color: #3dce09"
+                  ></i>
+                  Mark as read <span id="click-count"></span>
+                </h4>
+              </div>
+              <div id="clicked-container">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Join our forum section -->
+      <section
+        class="flex flex-col lg:flex-row justify-between gap-4 lg:gap-10 items-center bg-[#12132D] p-6 lg:p-24 my-8 lg:my-24 rounded-[32px]"
+      >
+        <div class="font-mulish space-y-10">
+          <h4 class="font-black text-4xl text-white">Join Our Forum</h4>
+          <p class="text-[#FFFFFFCC] text-lg font-normal">
+            Step into our Retro Reminisce group, a haven for those who cherish
+            the beauty of yesteryears. Join us on a journey through nostalgia,
+            where every story, image, and sentiment evokes the magic of the
+            past.
+          </p>
+          <button
+            class=" btn bg-[#797DFC] text-white border-none font-mulish text-xl font-bold rounded-[50px] w-[230px]"
+          >
+            Register Now!
+          </button>
+        </div>
+        <div class="min-w-[380px] relative">
+          <img
+            class="relative lg:absolute lg:top-[-95px] border-[1px] border-dashed"
+            src="images/joinforum.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <!-- Latest Post Section -->
+      <section>
+        <div class="px-8 lg:px-32 text-center space-y-4">
+          <h3 class="font-mulish font-black text-4xl text-[#12132D]">
+            Latest Posts
+          </h3>
+          <p class="font-inter font-normal text-lg text-[#12132D99]">
+            Step into the nostalgic embrace of the latest post on Retro
+            Reminisce, where every pixel and melody serves as a portal to a
+            bygone era, igniting the warmth of cherished memories in the vibrant
+            glow of vintage recollections.
+          </p>
+        </div>
+        <!-- spinner -->
+        <div id="toggle-loading-spinner" class="text-center my-40 hidden">
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
+        <!-- card container -->
+        <div id="latest-post-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6 my-10">
+          <!-- data received from API -->
+        </div>
+      </section>
+    </main>
+    <footer>
+      <footer
+        class="footer footer-center py-8 lg:py-20 bg-gradient-to-b from-[#12132D0D] to-[#12132D00] text-black px-5 lg:px-[350px]"
+      >
+        <div class="border-b-2 border-solid pb-6 mb-4 space-y-4">
+          <div class="font-mulish space-y-4">
+            <h3 class="font-black text-4xl">ReTro</h3>
+            <p class="font-normal text-base text-[#12132DB3]">
+              Journey through the echoes of the past with Retro Reminisce, where
+              every step is a dance with nostalgia.
+            </p>
+          </div>
+          <div class="flex gap-5 justify-center items-center">
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <aside>
+          <p class="text-[#12132D80] font-mulish text-base font-light">
+            Copyright © 2024 - All right reserved
+          </p>
+        </aside>
+      </footer>
+    </footer>
+    <!-- scripts -->
+    <script src="scripts/script.js"></script>
+    <script src="scripts/load_data.js"></script>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/d69151b4e0.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
